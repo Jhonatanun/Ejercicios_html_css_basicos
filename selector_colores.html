@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selector de Colores</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Sección izquierda (menú) */
+    .menu {
+      width: 25%;
+      background-color: #f4f4f4;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .menu h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .menu select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 7px;
+      border-style: ridge;
+    }
+
+    /* Sección derecha (vista del color) */
+    .vista {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      transition: background-color 0.3s ease; /* efecto suave */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sección izquierda -->
+  <div class="menu">
+    <h2>Elige un color:</h2>
+    <select id="colorSelect">
+      <option value="">-- Selecciona un color --</option>
+      <option value="red">Rojo</option>
+      <option value="blue">Azul</option>
+      <option value="green">Verde</option>
+      <option value="purple">Morado</option>
+      <option value="orange">Naranja</option>
+      <option value="yellow">Amarillo</option>
+      <option value="black">Negro</option>
+      <option value="pink">Rosado</option>
+      <option value="brown">Marron</option>
+      <option value="gray">Gris</option>
+      <option value="white">Blanco</option>
+      <option value="beige">Beige</option>
+      <option value="silver">Plateado</option>
+    </select>
+  </div>
+
+  <!-- Sección derecha -->
+  <div class="vista" id="vistaColor">
+  </div>
+
+  <script>
+    const select = document.getElementById('colorSelect');
+    const vista = document.getElementById('vistaColor');
+
+    select.addEventListener('change', function() {
+      const color = this.value;
+      vista.style.backgroundColor = color;
+    });
+  </script>
+
+</body>
+</html>

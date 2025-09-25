@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selector de Colores con Botones</title>
+  <style>
+    body {
+      margin: 70px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      border-color: black;
+      border-style: double;
+    }
+
+    /* Sección izquierda (menú con botones) */
+    .menu {
+      width: 30%;
+      background-color: #f4f4f4;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .menu h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .menu button {
+      padding: 9px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .menu button:hover {
+      transform: scale(1.05);
+    }
+
+    /* Sección derecha (vista del color) */
+    .vista {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      transition: background-color 0.3s ease;
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sección izquierda -->
+  <div class="menu">
+    <h2>Elige un color:</h2>
+    <button style="background-color: red; color: white; border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('red')">Red</button>
+    <button style="background-color: blue; color: white; border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('blue')">Blue</button>
+    <button style="background-color: green; color: white; border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('green')">Green</button>
+    <button style="background-color: beige; color: rgb(221, 186, 186); border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('beige')">Beige</button>
+    <button style="background-color: purple; color: white; border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('purple')">Purple</button>
+    <button style="background-color: orange; color: white; border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('orange')">Orange</button>
+    <button style="background-color: brown; color: white; border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('brown')">Brown</button>
+    <button style="background-color: pink; color: white; border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('pink')">Pink</button>
+    <button style="background-color: gray; color: white; border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('gray')">Gray</button>
+    <button style="background-color: black; color: white; border-color: rgb(226, 236, 236) ; border-style: groove;" onclick="cambiarColor('black')">Black</button>
+    
+  
+  </div>
+
+  <!-- Sección derecha -->
+  <div class="vista" id="vistaColor">
+  </div>
+
+  <script>
+    function cambiarColor(color) {
+      const vista = document.getElementById('vistaColor');
+      vista.style.backgroundColor = color;
+    }
+  </script>
+
+</body>
+</html>
